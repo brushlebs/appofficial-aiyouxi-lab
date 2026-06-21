@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 简明指南与使用提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafaf9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.7;
+      padding: 3rem 1.5rem;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* 标题层级 · 清晰且有呼吸感 */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+
+    .subhead {
+      font-size: 1.05rem;
+      color: #666;
+      margin-top: 0.25rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 430;
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+      color: #222;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 450;
+      margin-top: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #2a2a2a;
+    }
+
+    p, li {
+      font-size: 1rem;
+      color: #3b3b3b;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.6rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    a {
+      color: #1b4d8a;
+      text-decoration: none;
+      border-bottom: 1px solid #bcd0e8;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #0a2f57;
+      border-bottom-color: #0a2f57;
+    }
+
+    /* 卡片 · 极简留白 */
+    .card-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.5rem 1.8rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #efefef;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card strong {
+      font-weight: 500;
+      color: #1e1e1e;
+    }
+
+    .highlight-badge {
+      display: inline-block;
+      background: #f0f4fa;
+      color: #1b4d8a;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      letter-spacing: 0.01em;
+      font-weight: 450;
+      margin-right: 0.4rem;
+    }
+
+    /* 使用建议 小标签样式 */
+    .suggestion-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .suggestion-list li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: baseline;
+      margin-bottom: 0.6rem;
+    }
+
+    .suggestion-list li::before {
+      content: "–";
+      color: #9a9a9a;
+      font-weight: 300;
+    }
+
+    /* 引用/提醒块 */
+    .note {
+      background: #f5f5f3;
+      border-left: 4px solid #b8c9dd;
+      padding: 1rem 1.4rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.8rem 0;
+      font-size: 0.95rem;
+      color: #3f3f3f;
+    }
+
+    .faq-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item h4 {
+      font-weight: 480;
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+      color: #1e1e1e;
+    }
+
+    .faq-item p {
+      margin-bottom: 0.2rem;
+      font-size: 0.95rem;
+      color: #4a4a4a;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 2.6rem 0 1.8rem;
+    }
+
+    footer {
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      color: #8f8f8f;
+      border-top: 1px solid #e8e8e8;
+      padding-top: 1.6rem;
+      text-align: left;
+    }
+
+    /* 窄屏微调 */
+    @media (max-width: 520px) {
+      body {
+        padding: 2rem 1.2rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .card {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero / 摘要 -->
+  <h1>爱游戏 · 一份简明指南</h1>
+  <div class="subhead">
+    从使用路径到日常提醒，让熟悉的过程更清晰一些。
+  </div>
+
+  <p>
+    不论你是初次接触还是偶尔使用，<a href="https://appofficial-aiyouxi.com.cn">爱游戏</a>这个名称可能已经出现在你的收藏夹或浏览记录里。这份页面不是为了介绍功能清单，而是从实际使用的角度，帮你理清「它是什么」「什么时候好用」「有哪些细节值得留意」。不绕弯子，也不堆砌术语。
+  </p>
+
+  <!-- 亮点 · 卡片形式 -->
+  <h2>几个值得注意的亮点</h2>
+  <div class="card-group">
+    <div class="card">
+      <p><span class="highlight-badge">轻量</span> <strong>不做多余的干扰</strong> —— 界面直接围绕内容展开，没有弹窗、浮层或者强制引导。打开之后，焦点自然落在你关心的部分。</p>
+    </div>
+    <div class="card">
+      <p><span class="highlight-badge">一致</span> <strong>操作路径相对固定</strong> —— 常用区域的位置和命名保持稳定，减少每次都要重新寻找的疲劳感。对于习惯固定流程的人来说，这种一致性很舒服。</p>
+    </div>
+    <div class="card">
+      <p><span class="highlight-badge">安静</span> <strong>更新不打扰</strong> —— 版本变动信息放置在独立区域，不会在主要界面里突然弹出提醒。你可以按自己的节奏去了解变化，而不是被动的接收。</p>
+    </div>
+  </div>
+
+  <!-- 使用建议 + 场景 -->
+  <h2>使用场景与建议</h2>
+  <p>以下是一些基于实际体验的参考场景，不一定覆盖所有情况，但或许能帮你更贴合地使用 <a href="https://appofficial-aiyouxi.com.cn">爱游戏</a>。</p>
+
+  <ul class="suggestion-list">
+    <li><strong>日常浏览</strong> —— 如果只是想找点内容填充碎片时间，可以直接进入主区域，不需要复杂的导航。适合通勤、排队或者睡前几分钟。</li>
+    <li><strong>专注模式</strong> —— 不想被频繁切换打扰时，建议关闭设备上的非必要通知，<a href="https://appofficial-aiyouxi.com.cn">爱游戏</a>本身不会主动推送，搭配系统免打扰效果更好。</li>
+    <li><strong>内容探索</strong> —— 利用稳定的分类入口，逐步了解不同板块。不需要一次性全部看完，按兴趣慢慢深入就好。</li>
+    <li><strong>临时中断</strong> —— 中途需要离开时，当前状态通常会被保留（取决于具体功能），返回后可以继续。建议留意界面上的进度提示。</li>
+  </ul>
+
+  <!-- 可信但克制的访问说明 -->
+  <h2>关于访问，几个实在的提醒</h2>
+  <div class="note">
+    <p style="margin-bottom:0.2rem;"><strong>🔍 确认地址</strong> —— 目前有效的访问地址是 <a href="https://appofficial-aiyouxi.com.cn">爱游戏</a>。建议通过浏览器书签或官方渠道进入，避免使用第三方来源的链接。</p>
+    <p style="margin-bottom:0;"><strong>🔒 基础安全习惯</strong> —— 不要在公共设备上勾选「记住密码」；如果使用个人设备，也请留意系统更新。网站本身采用标准加密，但日常安全意识同样重要。</p>
+  </div>
+
+  <p>
+    网站不需要注册或提供额外个人信息即可浏览大部分内容。若遇到要求输入敏感信息（如支付密码、身份证号）的弹窗，请保持警惕，并通过上方正确地址重新访问确认。<a href="https://appofficial-aiyouxi.com.cn">爱游戏</a>不会在页面外通过私信或广告索取信息。
+  </p>
+
+  <!-- FAQ 摘要 (简洁版) -->
+  <h2>几个常见疑问 · 摘要</h2>
+
+  <div class="faq-item">
+    <h4>需要下载客户端吗？</h4>
+    <p>不需要。通过浏览器访问 <a href="https://appofficial-aiyouxi.com.cn">爱游戏</a> 即可，无需安装额外软件。移动端和桌面端的体验基本一致。</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>页面加载慢怎么办？</h4>
+    <p>先检查本地网络；部分内容可能因加载资源稍多需要几秒。如果经常卡顿，可尝试关闭其他占用带宽的标签页或应用。</p>
+  </div>
+
+  <div class="faq-item">
+    <h4>会不会有广告或重定向？</h4>
+    <p>主站本身不插入广告弹窗或自动跳转。若你遇到异常跳转，很可能是设备环境问题（如扩展程序或 DNS 劫持），建议检查浏览器设置或更换网络再试。</p>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p style="margin-bottom:0.2rem;">这份页面仅作为使用参考，不构成任何形式的承诺或推广。所有描述基于公开信息和通用体验，具体情况以实际访问为准。</p>
+    <p style="margin-bottom:0;">保持理性，按需使用。</p>
+  </footer>
+
+</div>
+</body>
+</html>
