@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问鼎app · 简明指南与知识入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f2f4f6;
+            color: #1e2229;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* ---------- hero 简明区 ---------- */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e6e9ed;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #111827;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #4b5563;
+            max-width: 660px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background: #eef2f6;
+            color: #2c3e50;
+            font-size: 0.85rem;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            border: 1px solid #dce1e8;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+        }
+
+        /* ---------- 网格卡：目录感 ---------- */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 680px) {
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 1.6rem;
+            border: 1px solid #e0e5ea;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #edf0f5;
+            padding-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            margin-bottom: 0.65rem;
+            padding-left: 1.4rem;
+            position: relative;
+            color: #374151;
+        }
+
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.25rem;
+            color: #6f7c8b;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .soft-link {
+            color: #2563eb;
+            text-decoration: none;
+            border-bottom: 1px dashed #aac3f0;
+        }
+
+        .card .soft-link:hover {
+            border-bottom-style: solid;
+            color: #1e40af;
+        }
+
+        /* ---------- 提示区 ---------- */
+        .note-block {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e5ea;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .note-block .note-icon {
+            font-size: 2rem;
+            line-height: 1;
+            color: #3b4a5e;
+            min-width: 2.5rem;
+        }
+
+        .note-block .note-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .note-block h3 {
+            font-weight: 500;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .note-block p {
+            color: #4b5563;
+            margin-bottom: 0.4rem;
+        }
+
+        .note-block .inline-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 450;
+        }
+
+        .note-block .inline-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ---------- 相关信息区 ---------- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 720px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-item {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.4rem 1.3rem;
+            border: 1px solid #e0e5ea;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6b7a8c;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-item .value {
+            font-size: 1.1rem;
+            font-weight: 450;
+            color: #111827;
+        }
+
+        .info-item .desc {
+            font-size: 0.9rem;
+            color: #4b5563;
+            margin-top: 0.3rem;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e0e5ea;
+        }
+
+        .faq-mini h3 {
+            font-weight: 500;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .faq-row {
+            border-bottom: 1px solid #edf0f5;
+            padding: 0.8rem 0;
+        }
+
+        .faq-row:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 480;
+            color: #1e293b;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-a {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin-left: 1rem;
+        }
+
+        .faq-a a {
+            color: #1d4ed8;
+            text-decoration: none;
+            border-bottom: 1px dotted #98b5e8;
+        }
+
+        .faq-a a:hover {
+            border-bottom-style: solid;
+        }
+
+        /* ---------- 页脚 ---------- */
+        .footer-note {
+            text-align: center;
+            padding: 1.5rem 0 0.5rem;
+            color: #6f7c8b;
+            font-size: 0.85rem;
+            border-top: 1px solid #dce1e8;
+            margin-top: 1rem;
+        }
+
+        .footer-note a {
+            color: #4b5b6d;
+            text-decoration: none;
+            border-bottom: 1px dotted #b0bac6;
+        }
+
+        .footer-note a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="badge">知识库入口 · 简明指南</div>
+        <h1>问鼎app · 使用前了解这些</h1>
+        <p class="sub">一份温和的目录式指引，帮助你快速熟悉功能定位与访问方式，避免常见困惑。</p>
+    </div>
+
+    <!-- 目录感卡片：说明区 + 特点区 -->
+    <div class="grid-cards">
+        <div class="card">
+            <h2>▎说明区</h2>
+            <ul>
+                <li><strong>问鼎app</strong> 是一款面向日常信息整合的工具型应用，旨在提供轻量的内容聚合与查找体验。</li>
+                <li>当前版本主要支持资料检索、专题订阅以及个人标签管理，所有功能均围绕“快速定位”设计。</li>
+                <li>如果你对具体模块有疑问，可以在应用内“帮助”侧栏找到图文说明，或参考下文提示。</li>
+                <li>服务由 <a href="https://zh-down-wending.com" class="soft-link">问鼎app</a> 官方网站提供更新与公告，建议定期关注。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>▎特点与场景</h2>
+            <ul>
+                <li><strong>场景一</strong>：日常需要从多个来源整理要点时，可通过收藏夹快速归档。</li>
+                <li><strong>场景二</strong>：团队内部分享知识卡片，支持自定义标签与协作备注。</li>
+                <li><strong>场景三</strong>：私人阅读清单管理，标记进度与优先级，减少信息过载。</li>
+                <li>每个操作都伴有简短引导，降低上手门槛，同时保留进阶自定义空间。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示区：访问提醒 + 温和建议 -->
+    <div class="note-block">
+        <div class="note-icon">📌</div>
+        <div class="note-content">
+            <h3>访问提醒</h3>
+            <p>首次使用建议直接在浏览器中打开 <a href="https://zh-down-wending.com" class="inline-link">问鼎app</a> 并完成账号关联，后续无需重复授权。</p>
+            <p>部分功能需要稳定的网络环境，若加载缓慢可尝试刷新或稍后再试。应用内不收集无关隐私数据，所有记录仅用于功能同步。</p>
+            <p style="margin-top:0.2rem; font-size:0.9rem;">⚠️ 请认准官方域名，避免使用来源不明的第三方渠道。</p>
+        </div>
+    </div>
+
+    <!-- 相关信息区：三栏卡片 -->
+    <div class="info-grid">
+        <div class="info-item">
+            <div class="label">当前版本</div>
+            <div class="value">v2.4.1 · 稳定</div>
+            <div class="desc">上次更新于上月，修复了标签排序与同步延迟问题。</div>
+        </div>
+        <div class="info-item">
+            <div class="label">常用入口</div>
+            <div class="value">知识库 · 订阅</div>
+            <div class="desc">你可以在 <a href="https://zh-down-wending.com" style="color:#2563eb; text-decoration:none; border-bottom:1px dotted #9bb5ea;">问鼎app</a> 首页左侧导航快速切换。</div>
+        </div>
+        <div class="info-item">
+            <div class="label">推荐环境</div>
+            <div class="value">Chrome / Edge / Safari</div>
+            <div class="desc">移动端建议使用系统浏览器，体验与桌面端一致。</div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h3>▎常见疑惑（FAQ 摘要）</h3>
+        <div class="faq-row">
+            <div class="faq-q">问：是否需要注册才能使用？</div>
+            <div class="faq-a">是的，注册后可同步个人配置。你可以通过 <a href="https://zh-down-wending.com">问鼎app</a> 完成注册，大约需要2分钟。</div>
+        </div>
+        <div class="faq-row">
+            <div class="faq-q">问：免费版与增值服务有何区别？</div>
+            <div class="faq-a">免费版包含基础归档、标签与检索功能；增值服务主要扩展了协作空间与高级筛选，无强制广告。</div>
+        </div>
+        <div class="faq-row">
+            <div class="faq-q">问：数据是否会同步到其他设备？</div>
+            <div class="faq-a">登录同一账号后，收藏与标签会自动同步。建议在官网 <a href="https://zh-down-wending.com" style="color:#2563eb;text-decoration:none;border-bottom:1px dotted #9bb5ea;">问鼎app</a> 检查同步状态。</div>
+        </div>
+        <div style="margin-top:0.6rem; font-size:0.9rem; color:#5b6c7d;">
+            💡 更多疑问可查阅应用内“常见问题”页面，或通过官网联系客服。
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        <span>本页仅为介绍指引，所有功能以实际版本为准。</span><br>
+        <span>官方入口：<a href="https://zh-down-wending.com">问鼎app</a></span>
+    </div>
+
+</div>
+
+</body>
+</html>
